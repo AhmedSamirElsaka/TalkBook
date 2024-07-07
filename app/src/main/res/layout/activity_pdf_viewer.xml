@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.PdfViewerActivity">
+    <TextView
+        android:id="@+id/pdfTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="#FFEB3B"
+        android:text="Graduation Project" />
+
+    <FrameLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.graduationproject.ui.PdfRendererView
+            android:id="@+id/pdfView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:pdfView_divider="@drawable/pdf_viewer_divider"
+            app:pdfView_engine="internal"
+            app:pdfView_showDivider="false" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/pdf_viewer_progress_circle"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>
